@@ -81,6 +81,9 @@ service firebase.storage {
 
 ## COMPONENTES, RUTAS Y EL MODELO QUE USAREMOS
 
+	Recursos:
+		- https://getbootstrap.com/docs/4.0/components/navbar/#supported-content
+
 1. Descargar el archivo adjunto y descomprimirlo
 	- Copiar el archivo `styles.css` en el proyecto
 	- La imagen `drop-images.png` copiarla y cortalarla en: (assets > img)
@@ -92,7 +95,11 @@ service firebase.storage {
 3. Crear el archivo de rutas `app.routes.ts`
 	- Importar el archivo en el modulo principal
 
-4. 
+4. Importar los componentes creados en el modulo principal
+
+5. Añadir un navbar (primer recurso) a la vista del componente principal
+	- Personalizar el navbar
+	- Añadir las directivas: router-outlet, routerLinkActive y routerLink
 	
 
 
