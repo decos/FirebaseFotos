@@ -79,6 +79,21 @@ service firebase.storage {
 	- import { AngularFirestoreModule } from 'angularfire2/firestore';
 	- AngularFirestoreModule, // imports firebase/firestore, only needed for database features
 
+## COMPONENTES, RUTAS Y EL MODELO QUE USAREMOS
+
+1. Descargar el archivo adjunto y descomprimirlo
+	- Copiar el archivo `styles.css` en el proyecto
+	- La imagen `drop-images.png` copiarla y cortalarla en: (assets > img)
+
+2. Crear el componente de `Carga` y `Fotos`
+	- ng g c components/carga -is
+	- ng g c components/fotos -is
+
+3. Crear el archivo de rutas `app.routes.ts`
+	- Importar el archivo en el modulo principal
+
+4. 
+	
 
 
 
