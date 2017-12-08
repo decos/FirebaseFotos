@@ -27,7 +27,7 @@ Before running the tests make sure you are serving the app via `ng serve`.
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## INICIO DEL PROYECTO Y ARCHIVOS ADJUNTOS
+## INICIO DEL PROYECTO
 
 	Recursos:
 		- https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md
@@ -47,21 +47,25 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 4. Ir al segundo recurso y añadir un nuevo proyecto llamado `FirebaseFotos`5. 
 
 5. Ir al tercer recurso y asegurarse que las reglas esten asi:
-	{
-	  "rules": {
-	    ".read": true,
-	    ".write": true
-	  }
-	}
+~~~	
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+~~~
 	
 6. Ir al cuarto recurso (Storage > Reglas) y asegurarse que las reglas esten asi:
-	service firebase.storage {
-	  match /b/{bucket}/o {
-	    match /{allPaths=**} {
-	      allow read, write: if true;
-	    }
-	  }
-	}
+~~~
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if true;
+    }
+  }
+}
+~~~
 
 7. Añadir la configuracion de Firebase al siguiente archivo:
 	- src/environments/environment.ts
