@@ -137,11 +137,25 @@ ERROR: angularfire2 found version 4, expected 3
 
 6. Codear los metodos del servicio
 
+## COMPONENTE DE CARGA - HTML
 
+1. Codear la vista del componente `Carga`
+	- Añadir dos botones
+	- Añadir una tabla
 
+2. Codear el componente `Carga`
+	- Importar `FileItem` y `CargaImagenesService`
+	- Inyectar el servicio en el constructor
 
+~~~
+Para solucionar el ERROR de "No provider for AngularFireDatabase!" debes añadir en el modulo principal lo siguiente:
+	- import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+	- import { AngularFireAuthModule } from 'angularfire2/auth';
+~~~
 
+3. Codear la función `cargarImagenesFirebase`
 
+4. Codear la función `limpiarArchivos`
 
 
 

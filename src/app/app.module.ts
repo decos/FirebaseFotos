@@ -15,6 +15,10 @@ import {CargaComponent} from './components/carga/carga.component';
 import {FotosComponent} from './components/fotos/fotos.component';
 //Import service
 import {CargaImagenesService} from './services/carga-imagenes.service';
+// Solucionar ERROR de " No provider for AngularFireDatabase!"
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import {CargaImagenesService} from './services/carga-imagenes.service';
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
-    APP_ROUTING
+    APP_ROUTING,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   providers: [CargaImagenesService],
   bootstrap: [AppComponent]
