@@ -18,13 +18,16 @@ import {CargaImagenesService} from './services/carga-imagenes.service';
 // Solucionar ERROR de " No provider for AngularFireDatabase!"
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+//Import Directive
+import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CargaComponent,
-    FotosComponent
+    FotosComponent,
+    NgDropFilesDirective
   ],
   imports: [
     BrowserModule,

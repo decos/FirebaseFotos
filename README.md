@@ -157,12 +157,35 @@ Para solucionar el ERROR de "No provider for AngularFireDatabase!" debes añadir
 
 4. Codear la función `limpiarArchivos` en el componente `carga`
 
+## DIRECTIVA DEL DROPZONE
 
+~~~
+Crear directiva que se encargara de hacer el DROP de archivos
+~~~
 
+1. Crear la directiva `ngDropFIles`
+	- ng g d directives/ngDropFiles
+ 
+2. Añadir el `selector` de la directiva creada en la vista del componente `carga`
 
+3. Realizar las importaciones correspondientes en la directiva `ngDropFIles`
+	- Importar `Directive`, `EventEmitter`, `ElementRef`, `HostListener`, `Input`, `Output` del paquete `@angular/core`
+	- Importar el modelo `FileItem`
 
+~~~
+EventEmitter: 	Mandar informacion al padre que ya se hizo algo
+ElementRef: 	Tener la referencia al elemento HTML al cual estoy adjuntando esta directiva
+HostListener: 	Adjuntar eventos
+Input: 		Recibir informacion que viene del Padre
+Output: 	Para mandarle informacion al padre
+~~~
 
+4. Añadir la directiva `ngClass` a la vista del componente `carga`
 
+5. Añadir la función `archivoSobreDropZone` al componente `carga`	
+	
+6. Codera la directiva `ngDropFiles`
+	
 	
 
 
