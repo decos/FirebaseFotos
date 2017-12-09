@@ -153,7 +153,7 @@ Para solucionar el ERROR de "No provider for AngularFireDatabase!" debes añadir
 	- import { AngularFireAuthModule } from 'angularfire2/auth';
 ~~~
 
-3. Codear la función `cargarImagenesFirebase`
+3. Codear la función `cargarImagenesFirebase` en e
 
 4. Codear la función `limpiarArchivos`
 
