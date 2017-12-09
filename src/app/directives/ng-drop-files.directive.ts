@@ -34,8 +34,70 @@ export class NgDropFilesDirective {
   //El mouse esta pasando sobre el objeto
   @HostListener('dragover', ['$event'])
   public ondragover( event:any ){
+    let transferencia = this._getTransferencia( event );
+    transferencia.dropEffect = 'copy';
+
+    //Prevenir cualquier comportamiento por defecto no deseado
+    this._prevenirYdetener( event );
+
     this.archivoSobre.emit(true);
   }
+  //Cuando se hace un Dropp (cuando agarramos un elemento y lo soltamos en un html)
+  @HostListener('drop', ['$event'])
+  public ondrop( event:any){
+    let transferencia = this._getTransferencia( event );
 
+    if(!transferencia){
+      return;
+    }
+
+    this._agregarArchivos( transferencia.files )
+
+    this._prevenirYdetener( event );
+  }
+
+  //Si hay informacion que enviar
+  private _getTransferencia( event:any ){
+    return event.dataTransfer ? event.dataTransfer : event.originalEvent.dataTransfer;
+  }
+
+  //Extraer los archivos que quiero droppear de todo ese eventos
+  private _agregarArchivos( archivosLista:FileList ){
+    console.log( archivosLista );
+
+  }
+
+  //Ayudar a prevenir el comportamiento por defecto
+  private _prevenirYdetener( event:any ){
+    event.preventDefault();
+    event.stopPropagation();
+  }
+
+  // Si el archivo puede ser cargado
+  private _ArchivoPuedeSerCargado( archivo:File ){
+    if( !this._archivoYaFueDroppeado( archivo.name ) && this._esImagen(archivo.type) ){
+      return true;
+    }
+    return false;
+  }
+
+  //Saber si el archivo ya fue Droppeado
+  private _archivoYaFueDroppeado( nombreDelArchivo:string ):boolean{
+    for( let i in this.archivos ){
+
+      let arch = this.archivos[i];
+
+      if( arch.archivo.name === nombreDelArchivo ){
+        console.log("Archivo ya existe en la lista", nombreDelArchivo);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  //Restringirlo para que sean imagenes
+  private _esImagen( tipoArchivo:string ):boolean {
+    return ( tipoArchivo == '' || tipoArchivo == undefined ) ? false : tipoArchivo.startsWith("image");
+  }
 
 }

@@ -186,7 +186,20 @@ Output: 	Para mandarle informacion al padre
 	
 6. Codera la directiva `ngDropFiles`
 	
-	
+## VALIDACIONES DEL ARCHIVO DESDE LA DIRECTIVA
 
+1. Codear las siguientes validaciones en la directiva
+
+~~~
+	_getTransferencia: Si hay informacion que enviar
+	_prevenirYdetener: Ayudar a prevenir el comportamiento por defecto
+	_ArchivoPuedeSerCargado: Si el archivo puede ser cargado
+	_archivoYaFueDroppeado: Saber si el archivo ya fue Droppeado
+	_esImagen: Restringirlo para que sean imagenes
+~~~
+	
+2. Codear el evento `ondrop` de la directiva
+
+3. Modificar el evento `ondragover` de la directiva
 
 

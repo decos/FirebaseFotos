@@ -17,7 +17,6 @@ export class CargaComponent {
   constructor( public _cargaImagenes:CargaImagenesService ) { }
 
   archivoSobreDropZone( e:boolean ){
-    console.log("archivoSobreDropZone", e);
     this.estaSobreDropZone = e;
   }
 
