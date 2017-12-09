@@ -198,8 +198,10 @@ Output: 	Para mandarle informacion al padre
 	_esImagen: Restringirlo para que sean imagenes
 ~~~
 	
-2. Codear el evento `ondrop` de la directiva
+2. Codear el evento `ondrop` en la directiva
 
-3. Modificar el evento `ondragover` de la directiva
+3. Modificar el evento `ondragover` en la directiva
+
+4. Codear la función `_agregarArchivos` en la directiva
 
 
