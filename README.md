@@ -42,7 +42,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 2. Añadir el estilo y los scripts de `Bootstrap` en el indice del proyecto
 
 3. Instalar AngularFire y Firebase
-	- npm install angularfire2 firebase --save
+	- npm install angularfire2@5.0.0-rc.3 --save
 
 4. Ir al segundo recurso y añadir un nuevo proyecto llamado `FirebaseFotos`5. 
 
@@ -100,6 +100,55 @@ service firebase.storage {
 5. Añadir un navbar (primer recurso) a la vista del componente principal
 	- Personalizar el navbar
 	- Añadir las directivas: router-outlet, routerLinkActive y routerLink
+
+6. Crear el modelo `FileItem`
+	- src/app/models/file-item.ts
+
+## CONFIGURACIÓN DE FIREBASE Y SERVICIO DE CARGA
+
+1. Crear el servicio `cargaImagenes`
+	- ng g s services/cargaImagenes
+
+2. Importar el servicio `cargaImagenes` en el modulo principal e inyectarlo en `providers`
+
+~~~
+En Firebase tenemos que hacer dos cosas:
+	- Storage: Cargar la imagen fisicamente
+	- Database: Agregar una referencia 
+~~~
+
+~~~
+ERROR: angularfire2 found version 4, expected 3
+	- Eliminar del archivo `package.json` la linea "angularfire2": "^5.0.0-rc.4",
+	- Eliminar los ficheros que estan dentro de  `node_modules`
+	- Ejecutar el comando `npm i`
+	- Ejecutar el comando: npm install angularfire2@5.0.0-rc.3 --save
+~~~
+
+3. Importar lo siguiente en el servicio:
+	- import { AngularFireDatabase, FirebaseListObservable } from "angularfire2/database-deprecated";
+	- import { FileItem } from '../models/file-item';
+	- import * as firebase from "firebase";
+
+4. Añadir una dirección donde vamos almacenar nuestras imagenes al servicio
+	- private CARPETA_IMAGENES:string = 'img';
+
+5. Inyectar la clase `AngularFireDatabase` en el constructor
+
+6. Codear los metodos del servicio
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 

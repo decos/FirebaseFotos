@@ -13,6 +13,8 @@ import {APP_ROUTING} from './app.routes';
 //Importar los componentes creados
 import {CargaComponent} from './components/carga/carga.component';
 import {FotosComponent} from './components/fotos/fotos.component';
+//Import service
+import {CargaImagenesService} from './services/carga-imagenes.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import {FotosComponent} from './components/fotos/fotos.component';
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     APP_ROUTING
   ],
-  providers: [],
+  providers: [CargaImagenesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
