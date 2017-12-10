@@ -52,7 +52,8 @@ export class NgDropFilesDirective {
     }
 
     this._agregarArchivos( transferencia.files )
-
+    this.archivoSobre.emit(false);
+    
     this._prevenirYdetener( event );
   }
 
@@ -63,8 +64,18 @@ export class NgDropFilesDirective {
 
   //Extraer los archivos que quiero droppear de todo ese eventos
   private _agregarArchivos( archivosLista:FileList ){
-    console.log( archivosLista );
 
+    //Barrer las propiedades del objeto
+    for( let propiedad in Object.getOwnPropertyNames(archivosLista) ){
+      let archTemporal = archivosLista[propiedad];
+
+      if( this._ArchivoPuedeSerCargado(archTemporal) ){
+        let nuevoArchivo = new FileItem( archTemporal );
+        this.archivos.push(nuevoArchivo);
+      }
+
+    }
+    console.log(this.archivos);
   }
 
   //Ayudar a prevenir el comportamiento por defecto

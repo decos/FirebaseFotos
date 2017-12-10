@@ -204,4 +204,36 @@ Output: 	Para mandarle informacion al padre
 
 4. Codear la función `_agregarArchivos` en la directiva
 
+## OBTENER ARCHIVOS, VALIDARLOS Y MOSTRARLOS EN PANTALLA
+
+	Recursos:
+		- https://getbootstrap.com/docs/4.0/components/progress/#how-it-works
+
+1. Modificar la función `_agregarArchivos` en la directiva
+
+2. Modificar el evento `ondrop` en la directiva
+
+~~~
+Relacionar `archivos` de la directiva con los archivos del componente `carga`
+~~~
+
+3. Codear la tabla de la vista del componente `carga` con los `archivos`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
