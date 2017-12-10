@@ -219,7 +219,19 @@ Relacionar `archivos` de la directiva con los archivos del componente `carga`
 
 3. Codear la tabla de la vista del componente `carga` con los `archivos`
 
+## CARGAR IMÁGENES A FIREBASE - STORAGE
 
+1. Codear la función en el servicio `carga-imagenes`
+
+2. Subir dos imágenes y observar los siguientes enlaces:
+	- https://console.firebase.google.com/project/fir-fotos-1b755/database
+	- https://console.firebase.google.com/project/fir-fotos-1b755/storage/fir-fotos-1b755.appspot.com/files
+
+3. Codear el componente `fotos`
+	- Importar el servicio `CargaImagenesService`
+	- Inyectar el servicio en el constructor
+
+4. Codear la vista del componente `fotos`
 
 
 
